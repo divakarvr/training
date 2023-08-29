@@ -1,0 +1,34 @@
+Git Commands:
+* clone
+* branch
+* checkout 
+* add
+
+
+Pointers:
+* Content in Square brackets represents optional params
+
+
+Commands:
+ Clone:
+    * Syntax: 
+        git clone <https-url-of-the-repository> [<path of the dir along with the name where you wanted to clone>]
+            - requires un and passwd creds
+        git clone <ssh-url-of-the-repository> [<path of the dir along with the name where you wanted to clone>]
+            - Requires you to put public ssh key in the repository 
+
+ branch:
+    * git branch - tells you which branch you're currently in 
+
+ Checkout:
+    * switch branches from one to another
+        git checkout <target-branch> 
+    * Creates new branch from the current branch
+        git checkout -b <name-of-the-new-branch>
+
+ add: 
+    * To add all the files
+        git add .
+    * 
+
+ 
