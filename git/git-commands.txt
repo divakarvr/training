@@ -8,6 +8,7 @@ Git Commands:
 * push 
 * pull 
 * diff
+* log 
 
 Pointers:
 * Content in Square brackets represents optional params
@@ -57,3 +58,11 @@ Commands:
         git diff
     * If you want to see the changes you've done after "staging/git add", use this
         git diff --cached/staged
+
+ log:
+    * Look at all the logs in the cloned repository
+        git log
+    * Limit the n.of latest logs in the cloned repository
+        git log -n <n.of latest commits you want to see>
+    * See the logs in oneline (in non descriptive manner)
+        git log --oneline 
