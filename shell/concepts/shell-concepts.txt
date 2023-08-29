@@ -1,0 +1,4 @@
+concepts:
+* How commands & Installations actually work in an Operating system
+* Password less communication
+* Running the processes in Background

@@ -1,1 +1,13 @@
 Shell commands:
+* ssh 
+* cd (along with ~)
+* pwd
+* mkdir (along with -p)
+* ls (-la)
+* find
+* grep
+* pipe symbol
+* tee 
+* sed 
+* ps 
+* scp
