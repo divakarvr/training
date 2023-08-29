@@ -3,7 +3,7 @@ Git Commands:
 * branch
 * checkout 
 * add
-
+* status 
 
 Pointers:
 * Content in Square brackets represents optional params
@@ -32,3 +32,6 @@ Commands:
     * 
 
  
+ stattus:
+    * Tells the user what are the changes that are present in staging and also which are not in staging
+    
