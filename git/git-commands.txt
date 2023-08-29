@@ -4,9 +4,14 @@ Git Commands:
 * checkout 
 * add
 * status 
+* commit 
+* push 
+* pull 
+
 
 Pointers:
 * Content in Square brackets represents optional params
+* pull and push commands communicate with the Git server. Rest all will work in the local itself
 
 
 Commands:
@@ -27,11 +32,24 @@ Commands:
         git checkout -b <name-of-the-new-branch>
 
  add: 
+    * Adds the file(s) to staging
     * To add all the files
         git add .
-    * 
+    * To add a specific file 
+        git add <path of the file present in the repo>
+ 
+ status:
+    * Tells the user what are the changes that are present in staging and also which are not in staging
+        git status
+
+ Commit:
+    * Adds a message to the changes you're going to commit
+        git commit -m "<meaningful message about your changes>" 
+ 
+ push:
+    * git push 
+
+ pull:
+    * git pull
 
  
- stattus:
-    * Tells the user what are the changes that are present in staging and also which are not in staging
-    
