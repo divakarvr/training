@@ -7,7 +7,7 @@ Git Commands:
 * commit 
 * push 
 * pull 
-
+* diff
 
 Pointers:
 * Content in Square brackets represents optional params
@@ -52,4 +52,8 @@ Commands:
  pull:
     * git pull
 
- 
+ diff:
+    * If you want to see the changes you've done before "staging/git add", use this
+        git diff
+    * If you want to see the changes you've done after "staging/git add", use this
+        git diff --cached/staged
