@@ -1,1 +1,74 @@
 Shell commands:
+* cd (along with ~)
+* pwd
+* mkdir (along with -p)
+* ls (-la)
+* find
+* grep
+* tee 
+* wc 
+* sed 
+* ps 
+
+* scp
+* ssh 
+* cut 
+
+
+cd:
+    * cd <directory-path>
+        - directory-path can be Relative or absolute
+    * cd - : switch between previous & current directories 
+
+pwd: outputs the present working directory 
+
+mkdir:
+    * mkdir <directory-name> : creates the directory immediately
+    * mkdir -p <multiple directories inside one another>: Creates parent & sub directories by itself
+
+ls: 
+
+find:
+    looks for files/directories passed in the directory param to the find command
+    syntax:
+        find <directory> -[i]name '[*]<absolute name>[*]' [-type f|d]
+
+        -i - represents case insensitive search
+        f  - searches for file only
+        d  - searches for directories only 
+
+grep:
+    searches for strings inside the file(s)
+        syntax: grep [options] <search string> <filename>
+            options:
+                -i : case insensitive
+                -E : searches for multiple strings 
+                -n : gives the line number
+                -A : -A <number of lines to print after the string hit>
+                -B : -B <number of lines to print before the string hit>
+                -r : recursively search for string in the present working directory
+
+tee:
+    writes the terminal contents into a file 
+        syntax: <command> | tee [-a] <path of the file>
+
+        -a : append
+
+
+wc: 
+    counts chars/lines
+    wc -l <filename> : counts lines
+    wc -c <string>   : counts chars
+
+sed:
+    Searches the string and replaces it at the same time
+
+    sed -[options] 's/<search string/<substitute string>/g' <filepath>
+        -e: stands for expession. does not substitute in the file. just shows the result to the terminal
+        -i: replaces in the file without showing anything on the terminal
+
+ps:
+    ps -[options]
+        e: all users processes
+        f: format the output and give more details
+
