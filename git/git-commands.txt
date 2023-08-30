@@ -24,7 +24,12 @@ Commands:
             - Requires you to put public ssh key in the repository 
 
  branch:
-    * git branch - tells you which branch you're currently in 
+    * git branch [options] - tells you which branch you're currently in 
+        -a  : gives all the branches
+        -d  : deletes the branch
+                syntax: git branch -d <branch-name> 
+        -D  : Deletes the branch forcefully
+                syntax: git branch -D <branch-name>
 
  Checkout:
     * switch branches from one to another
@@ -49,6 +54,10 @@ Commands:
  
  push:
     * git push 
+        - Pushes the changes to the upstream branch
+    * git push origin -d <branch-name>
+        - Deletes the branch present in the Git server 
+
 
  pull:
     * git pull
