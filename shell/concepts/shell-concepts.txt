@@ -1,4 +1,38 @@
 concepts:
 * How commands & Installations actually work in an Operating system
+* Type of Paths:
+* Pipe
 * Password less communication
 * Running the processes in Background
+* Miscellaneous
+
+
+* How commands & Installations actually work in an Operating system
+    - OS will have a variable called PATH. PATH variable consists of Directories separated by a separator (: for linux and ; for windows)
+    - Update the path Variable in the file
+        * ~/.bashrc:                for linux
+        * ~/.bash_profile:          for mac
+        * environment variables:    for windows 
+
+    - Type of Installations:
+        * executable:   90% -- It itself sets the directory in the PATH variable. OR it sends the command file into any of the existing directories present in the PATH variable
+        * Zip files:        -- we will have to set the directory in the path variable
+
+* Type of Paths:
+    * Relative Path:        Will refer the path according to the present working directory
+    * absolute path:        Complete path
+
+* Pipe:
+    <command-1>  | <command-2>
+
+
+* Password less communication
+* Running the processes in Background
+
+
+* Miscellaneous:
+    ~       - user home
+    .       - present working directory
+    ..      - parent directory to the present directory
+    *       - all in the present working directory
+    /       - takes you to the first most directory inside the filesystem
