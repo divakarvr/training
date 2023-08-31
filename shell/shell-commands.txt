@@ -9,7 +9,13 @@ Shell commands:
 * wc 
 * sed 
 * ps 
-
+* zip
+* unzip
+* tar
+* untar
+* curl
+* wget
+* du
 * scp
 * ssh 
 * cut 
@@ -72,3 +78,67 @@ ps:
         e: all users processes
         f: format the output and give more details
 
+zip:    
+    zip [options] <zip name> <directory-name or file name(s) separated with space>
+        -r : recursive - useful in case of zipping the directory
+
+unzip: 
+    unzips the zip
+        unzip -d <directory path> <zip file path>
+        - unzip creates the directory mentioned in the command by itself
+
+        -d : specifying the directory where it needs to be unzipped
+
+
+tar: 
+    creates a tar file
+        tar -cvf <tar file name> <file(s) or directories separated by space>
+            e.g., tar -cvf demo.tar archive diwakar\'s-training-git-29-08-2023.zip
+
+        c: compress
+        v: verbose
+        f: filename
+
+untar:
+    If you want to extract the tar in a specific directory, Goto that directory and Run the command 
+        tar -xvf <tar file path>
+
+        x: extract
+        v: verbose
+        f: filepath
+
+curl:
+    You can do following things with curl
+    * curl <url> -- Gives the page contents on the terminal 
+    * Can be used for API calls
+        curl -u "<username>:<password/API token> <api endpoint> 
+    * curl -v <url>
+        -v : verbose mode
+
+wget:
+    * Downloads the content/files from the Internet
+
+du:
+    disk usage - gives the size of the file 
+        Syntax: du -sh <filename>    
+
+ssh:
+    Lets the user connect to other machine
+    Syntax: ssh <username>@<IP> 
+                - it asks for password
+            ssh -i <private-key-file-path> <username>@<IPs>
+                - Private key authenticates with the remote machine here.             
+            ssh -i <private-key-file-path> -o StrictHostKeyChecking=no <username>@<IPs>
+                - Useful in automation tasks
+
+scp:
+    Transfer files from/to localhost to/from the remote server
+        Send files from local:
+            * scp <path of the file in the local machine> [-i <private key file path>] <username>@<IP>:<remote path in the server>
+        Get files from remote server:
+            * scp [-i <pvt key file path>] <username>@<IP>:<filepath in the remote server> <local path of the file>
+
+cut:
+    Cuts the string based on the delimiter provided in the command
+    e.g., check $ echo "hello hi bye" | cut -d' ' -f2
+                  hi
