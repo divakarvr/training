@@ -27,8 +27,29 @@ concepts:
 
 
 * Password less communication
-* Running the processes in Background
+    - Generate the ssh keys in the local machine if not present
+        * ssh-keygen -t rsa
+            - interactive command
 
+    - Copy the keys to the remote server to enable password less communication
+        Default Keys:
+            * ssh-copy-id -i <username>@<IP>
+            * ssh-copy-id <username>@<IP> (mac)
+                ~ Both the above commands are going to copy id_rsa.pub i.e., Publick key from the directory <user_home>/.ssh by default if we dont specify any key
+            * connect to the machine like This
+                ssh <username>@<IP>
+                ~ it assumes the private key as  <user_home>/.ssh/id_rsa and connect to the machine
+
+        User specified Keys:
+            * ssh-copy-id -i <path_of_the_ssh_public_key> <username>@<IP> (same for linux and mac machine)
+                ~ This command copies the public key specified in the command to the remote server
+            * connect to the machine like this
+                ~ ssh -i <corresponding private key file path of the public key mentioned while copying> <username>@<IP>
+
+
+* Running the processes in Background
+    * Putting the ambersand at the end of the command will make the command to run in background
+        docker run -it --name my-running-app -p 8080:80 httpd &
 
 * Miscellaneous:
     ~       - user home
