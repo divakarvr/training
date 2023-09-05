@@ -1,0 +1,45 @@
+1. VPC
+
+
+
+
+VPC:
+    * Why Private networks are needed? 
+        IPV4 - 32 bits i.e., 4 Octets 
+             - N.of IPs = 2 ^ 32 = 4 Billion + Ips
+             - Population = 8 Billion 
+
+        Reasons: 
+        ~ Not enough IPs to assign for all the People as all the IPs will be exhausted at some point
+        ~ Companies would like to have Private IPs as much as Possible as they dont want to make everything Pulic
+
+    * CIDR Ranges: 
+        * We will have to decide how many IPs we need?
+        * When creating a Private network, we have two parts in IPV4 (32 bits)
+            1. Network bits 
+            2. Host bits 
+
+            0.0.0.0     -- Network Bits allocation & Host Bits  
+            -------
+                32 
+            
+            First 2 Octets cant be used - so, they are for Network Bits - Bare minimum req - 2^16 IPs = 65536 Ips
+
+            VPC: 10.0.0.0/16
+                    3rd octet: 4 bits to n/w  and the other 4 are for host
+                    -   -   -   -   -   -   -   - 
+                    128 64  32  16  8   4   2   1
+                    
+                Subnet-1: 10.0.128.0/20
+                Subnet-2: 10.0.64.0/20
+                Subnet-3: 10.0.32.0/20
+                Subnet-4: 10.0.16.0/20
+
+
+    * Subnets:
+        Why are these necessary? 
+            * To hide some of the servers like DB from the Outer world
+        * There are 2 types of Subnets
+            1. Private Subnet
+            2. Public Subnet 
+
