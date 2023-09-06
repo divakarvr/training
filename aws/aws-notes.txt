@@ -43,3 +43,15 @@ VPC:
             1. Private Subnet
             2. Public Subnet 
 
+
+
+Pointers:
+* NACLs are stateless i.e., You ll have to define both Inbound and Outbound rules
+* NACLs always work on priority basis on the rule number. 
+    --> Least rule number has the highest priority
+* One NACL can be associated with any number of Subnets. But One subnet can be associated with Only one NACL. (Same with RouteTable)
+* NAT Instance has to be hosted on the Public subnet inorder to let the Private Instance Allow/receive traffic from the Internet
+    --> Another thing to enable this is add the route in RouteTable from 0.0.0.0/0 to NAT Instance/NAT Gateway
+    --> NAT Instance charges similar to EC2 pricing (t2.micro is free for you. Use for development)
+    --> NAT Gateway charges you money. But its high available, elastic in configuration and can send any amount of traffic to/fro unlike nat-instance (as its 
+        limited by its own machine configuration)
