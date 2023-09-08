@@ -1,0 +1,71 @@
+Commands:
+* init
+* plan
+* apply
+* destroy
+
+Index:
+* Authentication 
+* provider
+* Resources
+* DataSources
+* Variables
+
+Concepts:
+* backend
+
+
+Commands:
+    init:
+        terraform init
+        - This command will download all the providers into local directory called .terraform
+        - Also when we have modules written in terraform, init will also intialise the modules as well
+    
+    plan:
+        terraform plan
+        - Just a dry run to let the user know what happens if we do "terraform apply"
+        - This will tell how many changes are going to be performed in 3 sections
+            change, add, destroy
+
+    apply:
+        terraform apply
+        - Applies the user defined terraform configuration onto the provider
+        - If we just use the "terraform apply" command, it runs the "terraform plan" internally, Presents the changes to the user and asks us 
+          for the confirmation. 
+          * If we say "yes" in the confirmation, it will go ahead and provision resources in the provider (i.e., aws cloud for us)
+
+        terraform apply --auto-approve
+        - Runs "terraform plan" internally and wont ask the user for confirmation
+        - Just checks the statefile and state of the resources in the provider and starts applying the changes
+
+    destroy:
+        terraform destroy
+        - Destroys the resources in the provider created using the Terraform
+        terraform destroy --auto-approve
+        - Runs "terraform plan" internally and wont ask the user for confirmation
+        - Just checks the statefile and state of the resources in the provider and starts applying the changes
+
+
+Authentication:
+    we use aws cli i.e., before running Terraform commands, we can export AWS_PROFILE
+        OR
+    We can specify the profile inside Terraform configuration files itself
+
+provider:
+    We need to tell terraform with which provider are you going to work on
+
+Resources:
+    Terraform resource provisions a resource in the cloud for you i.e., Creation
+        Argument: Inputs to the resource
+        Attributes: Outputs that we are gonna get from the resource
+
+DataSource:
+    Reads details about the aws resource that the user has given and stores the details in it
+
+Variables:
+    make the code better to use. Best to change the values of the Inputs
+
+
+backend:
+* Configures (nothing but stores) the statefile in the s3 bucket
+* Will help the contributors to have the same state file all the time 
