@@ -14,6 +14,8 @@ Pointers:
 * Content in Square brackets represents optional params
 * pull and push commands communicate with the Git server. Rest all will work in the local itself
 
+Concepts:
+* .gitignore
 
 Commands:
  Clone:
@@ -75,3 +77,8 @@ Commands:
         git log -n <n.of latest commits you want to see>
     * See the logs in oneline (in non descriptive manner)
         git log --oneline 
+
+Concepts:
+    .gitignore:
+        * When you do not want to track couple of files, those files can be kept in .gitignore file
+          So that the files wont be tracked by git 
