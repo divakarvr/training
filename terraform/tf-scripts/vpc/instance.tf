@@ -1,6 +1,6 @@
 
 resource "aws_network_interface" "foo" {
-  subnet_id   = aws_subnet.demo-subnet1.id
+  subnet_id = aws_subnet.demo-subnet1.id
 
   tags = {
     Name = "primary_network_interface"

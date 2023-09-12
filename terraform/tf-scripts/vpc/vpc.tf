@@ -1,15 +1,15 @@
 resource "aws_vpc" "demo-vpc" {
-    cidr_block = "10.0.0.0/16"
-    tags = {
-        Name = "diva-vpcs"
-    }
+  cidr_block = "10.0.0.0/16"
+  tags = {
+    Name = "diva-vpcs"
+  }
 }
 
 resource "aws_internet_gateway" "demo-gw" {
-    vpc_id = aws_vpc.demo-vpc.id
-    tags = {
-        Name = "diva-igws"
-    }
+  vpc_id = aws_vpc.demo-vpc.id
+  tags = {
+    Name = "diva-igws"
+  }
 }
 
 resource "aws_subnet" "demo-subnet1" {

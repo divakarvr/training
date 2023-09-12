@@ -3,6 +3,9 @@ Commands:
 * plan
 * apply
 * destroy
+* fmt
+* state 
+* output
 
 Index:
 * Authentication 
@@ -44,6 +47,23 @@ Commands:
         terraform destroy --auto-approve
         - Runs "terraform plan" internally and wont ask the user for confirmation
         - Just checks the statefile and state of the resources in the provider and starts applying the changes
+    
+    fmt:
+        terraform fmt (where the .tf files are present)
+        - This command will format all the terraform files with indentation 
+        - Also we can format a single file by providing the file name to the command
+            terraform fmt <filename> 
+    
+    state:
+        terraform state [options]
+        - list: terraform state list 
+            --> Lists down the resources that have been created by terraform 
+
+    output:
+        terraform output 
+        - outputs all the values specified in output blocks 
+        - we can also get one specific variable output using the following command
+            terraform output <output-name> 
 
 
 Authentication:
