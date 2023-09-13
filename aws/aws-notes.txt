@@ -1,7 +1,7 @@
 1. VPC
-
-
-
+2. EC2
+    * ami
+    * EBS
 
 VPC:
     * Why Private networks are needed? 
@@ -35,7 +35,6 @@ VPC:
                 Subnet-3: 10.0.32.0/20
                 Subnet-4: 10.0.16.0/20
 
-
     * Subnets:
         Why are these necessary? 
             * To hide some of the servers like DB from the Outer world
@@ -53,5 +52,43 @@ Pointers:
 * NAT Instance has to be hosted on the Public subnet inorder to let the Private Instance Allow/receive traffic from the Internet
     --> Another thing to enable this is add the route in RouteTable from 0.0.0.0/0 to NAT Instance/NAT Gateway
     --> NAT Instance charges similar to EC2 pricing (t2.micro is free for you. Use for development)
-    --> NAT Gateway charges you money. But its high available, elastic in configuration and can send any amount of traffic to/fro unlike nat-instance (as its 
-        limited by its own machine configuration)
+    --> NAT Gateway charges you money. But its high available, elastic in configuration and can send any amount of traffic to/fro unlike nat-instance 
+        (as its limited by its own machine configuration)
+
+EC2:
+    ami:
+        lets us create our own amis from the machines we have created and configured. 
+        e.g., 
+            * provision ubuntu 20/22
+            * install Java
+            * install jenkins 
+            * configure the Jenkins 
+            * Jenkins is installed and ready
+
+            --> Create an ami out of the Instance ---> Jenkins server preinstalled in the image we've created 
+
+        ami-background:
+            Image hardening: (security aspect)
+            It will take a image like ami/Ubuntu 20/22 / centos 
+            * Install couple of softwares which are security related
+            * Changes to installed s/w to block loop holes present in those s/w 
+
+            Jenkins:
+            * provision 
+            * Install Java and Jenkins
+                * configure the jenkins after installation
+            * Start using
+
+            provision a machine 
+            Post-provision configuration:
+                * Install couple of s/ws 
+                * Configure those 
+            Finally start using
+    
+    EBS: Elastic block store
+            * Nothing but storage to the Instance i.e., EBS Volume 
+        Snapshot: 
+            * Is nothing but a backup of the Volume
+        Lifecycle Manager:
+            * Lets you to create schedules to create the snapshots regularly (like cron job)
+
