@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('dryrun') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('provision') {
+            steps {
+                echo "provision stage"
+            }
+        }
+        stage('destroy') {
+            steps {
+                echo "Destroy stage"
+            }
+        }
+    }
+}
