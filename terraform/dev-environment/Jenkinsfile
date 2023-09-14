@@ -4,17 +4,27 @@ pipeline {
     stages {
         stage('dryrun') {
             steps {
-                echo 'Hello World'
+                sh """
+                    echo "---> Dry Run stage"
+                    terraform init 
+                    terraform plan
+                """
             }
         }
         stage('provision') {
             steps {
-                echo "provision stage"
+                sh """
+                    echo "---> provision stage"
+                    terraform apply --auto-approve
+                """
             }
         }
         stage('destroy') {
             steps {
-                echo "Destroy stage"
+                sh """
+                    echo "---> Destroy stage"
+                    #terraform destroy --auto-approve
+                """
             }
         }
     }
