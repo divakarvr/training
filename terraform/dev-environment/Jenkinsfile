@@ -1,0 +1,34 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('dryrun') {
+            steps {
+                sh """
+                    echo "---> Dry Run stage"
+                    cd terraform/dev-environment
+                    terraform init 
+                    terraform plan
+                """
+            }
+        }
+        stage('provision') {
+            steps {
+                sh """
+                    echo "---> provision stage"
+                    cd terraform/dev-environment
+                    terraform apply --auto-approve
+                """
+            }
+        }
+        stage('destroy') {
+            steps {
+                sh """
+                    echo "---> Destroy stage"
+                    cd terraform/dev-environment
+                    #terraform destroy --auto-approve
+                """
+            }
+        }
+    }
+}

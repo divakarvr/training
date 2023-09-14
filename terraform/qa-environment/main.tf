@@ -1,5 +1,5 @@
 module "qa-env" {
-  source = "../tf-modules/networking"
+  source = "git::https://github.com/divakarvr/diva-tf-modules.git?ref=vpc-module"
 
   cidr_block = var.cidr
   tag_name   = var.tag
