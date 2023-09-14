@@ -6,6 +6,7 @@ pipeline {
             steps {
                 sh """
                     echo "---> Dry Run stage"
+                    cd terraform/dev-environment
                     terraform init 
                     terraform plan
                 """
@@ -15,6 +16,7 @@ pipeline {
             steps {
                 sh """
                     echo "---> provision stage"
+                    cd terraform/dev-environment
                     terraform apply --auto-approve
                 """
             }
@@ -23,6 +25,7 @@ pipeline {
             steps {
                 sh """
                     echo "---> Destroy stage"
+                    cd terraform/dev-environment
                     #terraform destroy --auto-approve
                 """
             }
