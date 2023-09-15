@@ -1,4 +1,8 @@
-Installation
+* Installation
+* Jenkins Architechture
+* Pipeline
+    * Triggers
+
 
 
 Installation:
@@ -10,6 +14,10 @@ Installation:
         * apt-get install jenkins -y
 
 
-* git 
-* awscli
-* terraform 
+Jenkins Architechture: 
+
+
+
+
+
+
