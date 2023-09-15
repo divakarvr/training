@@ -1,0 +1,64 @@
+
+
+* Shell  -- linux
+* Git
+    - code is stored
+* build it 
+    - CICD Server (Jenkins)
+    - .jar
+    - docker image 
+        - Start the java process at container launch
+* Deployment 
+    - EC2 (one application can be accomodated)
+    - launch the container
+        - what if the container stops?
+        - Orchestrator comes -- also managing body i.e., kubernetes
+
+
+Jenkins Pipelines
+* Infra provision
+* Tools deployment
+* service deployments 
+
+
+
+
+
+
+
+Jenkins: in one vpc -- DONT TOUCH THIS VPC
+* Jenkins-master, agent, kubernetes-clusters 
+
+VPC -- 
+
+
+
+* Shell
+* Git
+* AWS 
+* Terraform
+* Ansible 
+* Jenkins
+    * Admin
+    * Usage - creating pipelines
+    * Pipeline 
+        * to create the Infra and machines inside it
+        * Destroy them
+    * post-provision
+        * ansible
+
+    * Service-deployment 
+        - sample code from github
+        - store the code in our repos
+        - Pipeline to build and deploy in multiple environments 
+        - make tweaks
+        - make jenkins to auto trigger
+        - Dockerfile 
+* Docker
+    * Dockerfile (able to write & understand)
+* Kubernetes
+    * Image is the minute & very basic part
+    * Deployments
+    * pods 
+    * services  
+    
