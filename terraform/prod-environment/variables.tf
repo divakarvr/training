@@ -5,6 +5,6 @@ variable "tag" {
 
 }
 
-variable "cidr_subnet"{
-    
+variable "cidr_subnet" {
+
 }
