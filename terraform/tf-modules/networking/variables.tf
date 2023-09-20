@@ -1,10 +1,12 @@
-variable "cidr_block" {
+variable "vpc_cidr" {
 }
 
-variable "tag_name" {
-    
+variable "environment" {
 }
 
-variable "cidr_subnet"{
-    
+variable "public_subnets_cidr" {
+
 }
+variable "private_subnets_cidr" {
+}
+
