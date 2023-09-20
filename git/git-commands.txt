@@ -10,6 +10,9 @@ Git Commands:
 * diff
 * log 
 
+to_cover:
+* rebase
+
 Pointers:
 * Content in Square brackets represents optional params
 * pull and push commands communicate with the Git server. Rest all will work in the local itself

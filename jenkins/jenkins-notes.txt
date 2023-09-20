@@ -1,8 +1,8 @@
 * Installation
 * Jenkins Architechture
+* Nodes
 * Pipeline
     * Triggers
-
 
 
 Installation:
@@ -14,7 +14,28 @@ Installation:
         * apt-get install jenkins -y
 
 
-Jenkins Architechture: 
+Jenkins Architechture
+
+
+Nodes:
+    Prerequisites:
+        * An Instance with password Authentication enabled
+        * tmp space should be around 1.5 - 2GB 
+    Challenges we've:
+        Enable PasswordAuthentication:
+            * In Azure, you can have the option to go for PasswordAuthentication by your choice
+            * In AWS, by default, we cant get PasswordAuthentication enabled option. Following is the process to enable PasswordAuthentication enabled
+                * see the status: systemctl status sshd
+                * vim /etc/ssh/sshd_config (Enable "password Authentication and root login" to yes in the file "/etc/ssh/sshd_config" file)
+                    PermitRootLogin yes
+                    PasswordAuthentication yes
+                * Restart the sshd service
+                    systemctl restart sshd
+                * Set the password for the root user
+                    If you're currently in root user. following is the command 
+                        passwd
+
+        
 
 
 
