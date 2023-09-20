@@ -1,0 +1,21 @@
+Jenkins installation on amazon linux 2023:
+    yum update –y
+    wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+    rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+    yum upgrade
+    dnf install java-11-amazon-corretto -y
+    yum install jenkins -y
+    systemctl enable jenkins
+    systemctl start jenkins
+
+Enable root user communication:
+    Connect Jenkins-agent with the Jenkins master using username and password
+    -> We need to enable password communication with the Jenkins-agent for the root user
+        * Set the password for root
+            passwd: JudeBen@123
+        * Enable "password Authentication and root login" to yes in the file "/etc/ssh/sshd_config"
+            PermitRootLogin yes
+            PasswordAuthentication yes
+        * To increase the space on the /tmp directory, add this line
+            echo 'tmpfs /tmp tmpfs rw,nodev,nosuid,size=1G 0 0' > /etc/fstab
+            -> Restart the machine to take the effect
