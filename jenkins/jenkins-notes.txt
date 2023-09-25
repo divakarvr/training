@@ -35,7 +35,11 @@ Nodes:
                     If you're currently in root user. following is the command 
                         passwd
 
-        
+        Increasing tmp space in amazon machine:
+            * Run the following command
+                echo 'tmpfs /tmp tmpfs rw,nodev,nosuid,size=2G 0 0' >> /etc/fstab
+            * Restart the machine using UI or command
+                shutdown -r now
 
 
 
