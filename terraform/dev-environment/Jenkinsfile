@@ -1,5 +1,11 @@
 pipeline {
     agent { label 'agent' }
+    parameters {
+        string(name: 'ACCESS_KEY_ID', description: 'Access key value of the IAM user')
+        string(name: 'SECRET_ACCESS_KEY', description: 'Secret access key value of the IAM user')
+        choice(name: 'REGION', choices: ['us-east-1', 'eu-west-1'], description: 'Select region')
+        choice(name: 'TF_OPERATION', choices: ['apply', 'destroy'], description: 'Select terraform operation')
+    }
     stages {
         stage('dryrun') {
             steps {
