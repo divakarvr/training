@@ -1,31 +1,55 @@
 pipeline {
-    agent any
+    agent { label 'agent' }
+    parameters {
+        string(name: 'ACCESS_KEY_ID', description: 'Access key value of the IAM user')
+        string(name: 'SECRET_ACCESS_KEY', description: 'Secret access key value of the IAM user')
+        choice(name: 'REGION', choices: ['us-east-1', 'eu-west-1'], description: 'Select region')
+        choice(name: 'TF_OPERATION', choices: ['apply', 'destroy'], description: 'Select terraform operation')
+    }
     stages {
         stage('dryrun') {
+            when {
+                 expression { params.TF_OPERATION == 'apply' }            
+            }
             steps {
                 sh """
                     echo "---> Dry Run stage"
                     cd terraform/dev-environment
+                    export AWS_ACCESS_KEY_ID=${ACCESS_KEY_ID}
+                    export AWS_SECRET_ACCESS_KEY=${SECRET_ACCESS_KEY}
+                    export AWS_DEFAULT_REGION=${REGION}
                     terraform init 
                     terraform plan
                 """
             }
         }
         stage('provision') {
+            when {
+                 expression { params.TF_OPERATION == 'apply' }            
+            }
             steps {
                 sh """
                     echo "---> provision stage"
+                    export AWS_ACCESS_KEY_ID=${ACCESS_KEY_ID}
+                    export AWS_SECRET_ACCESS_KEY=${SECRET_ACCESS_KEY}
+                    export AWS_DEFAULT_REGION=${REGION}
                     cd terraform/dev-environment
                     terraform apply --auto-approve
                 """
             }
         }
         stage('destroy') {
+            when {
+                 expression { params.TF_OPERATION == 'destroy' }            
+            }
             steps {
                 sh """
                     echo "---> Destroy stage"
+                    export AWS_ACCESS_KEY_ID=${ACCESS_KEY_ID}
+                    export AWS_SECRET_ACCESS_KEY=${SECRET_ACCESS_KEY}
+                    export AWS_DEFAULT_REGION=${REGION}
                     cd terraform/dev-environment
-                    #terraform destroy --auto-approve
+                    terraform destroy --auto-approve
                 """
             }
         }
