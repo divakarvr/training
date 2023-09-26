@@ -24,6 +24,9 @@ pipeline {
             }
         }
         stage('provision') {
+            when {
+                 expression { params.TF_OPERATION == 'apply' }            
+            }
             steps {
                 sh """
                     echo "---> provision stage"
@@ -36,6 +39,9 @@ pipeline {
             }
         }
         stage('destroy') {
+            when {
+                 expression { params.TF_OPERATION == 'destroy' }            
+            }
             steps {
                 sh """
                     echo "---> Destroy stage"
