@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('dryrun') {
             when {
-                TF_OPERATION == 'apply'
+                equals TF_OPERATION: 'apply'
             }
             steps {
                 sh """
