@@ -3,6 +3,7 @@
 * Nodes
 * Pipeline
     * Triggers
+    * 
 
 
 Installation:
@@ -43,6 +44,13 @@ Nodes:
 
 
 
+Pipeline
+    * Solved
+        * We did not configure aws cli in agent by sending the Key values as input from the Jenkins Pipeline
+        * Conditional executions
 
-
+    * Challenges exist
+        * We have to give the params all the time when we execute the Pipeline
+        * Key values are appearing in the Pipeline console output
+        * Jenkins inputs are showing the param values
 
