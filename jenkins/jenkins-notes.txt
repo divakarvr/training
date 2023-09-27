@@ -3,7 +3,6 @@
 * Nodes
 * Pipeline
     * Triggers
-    * 
 
 
 Installation:
@@ -53,4 +52,6 @@ Pipeline
         * We have to give the params all the time when we execute the Pipeline
         * Key values are appearing in the Pipeline console output
         * Jenkins inputs are showing the param values
+        ----> Can be overcome with Shell script additions and using jenkins-cli 
+        ----> Jenkins script console can also be useful if we know Groovy
 
