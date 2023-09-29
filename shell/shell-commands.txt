@@ -19,7 +19,8 @@ Shell commands:
 * scp
 * ssh 
 * cut 
-
+* read 
+* file 
 
 cd:
     * cd <directory-path>
@@ -142,3 +143,11 @@ cut:
     Cuts the string based on the delimiter provided in the command
     e.g., check $ echo "hello hi bye" | cut -d' ' -f2
                   hi
+
+read: 
+    read <variable name> 
+
+file:
+    file <path of the file>
+    --> lets you know what type of file it is
+    
