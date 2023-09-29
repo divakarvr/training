@@ -1,0 +1,74 @@
+* wildcards (along the way)
+* "" & '' 
+    - Escape char
+* Variables
+    - ${} & $
+* $() & `` (back ticks) & $(())
+* Loops
+    * for
+    * while
+* Operators
+    string:
+        ~ ==
+        ~ !=
+    arithmetic:
+        ~ -eq 
+        ~ -ne
+        ~ -ge
+        ~ -le
+    Linux:
+        ~ -x
+        ~ -d
+        ~ -f 
+        ~ -e
+* Conditional statements
+    * if
+    * case
+
+
+
+Miscallenous Points:
+    * Always pass the Variables with space separated to the script
+        ~ If the variable value contains space, enclose it in double or single quotes
+    * Never go for spaces in Shell or Linux. Always use Underscore or hypen in place of spaces
+    * Everything will be considered as a string in Shell 
+    * Multiple commands can be written in a single line using ; as a separator
+        e.g.,
+        demo-scripts $ pwd;echo "hi"; ls
+            /Users/praveenvaranasi/Professional/freelance/repos/diwakar-training/shell/demo-scripts
+            hi
+            conditional-stmt-if.sh  file.txt  for-loop.sh  vars.sh  while-loop.sh
+
+Wildcards: 
+    * - matching something
+      - also represents all
+
+"" & '':
+    "" - everything will be evaluated inside the double quotes
+    '' - Everything will be suppressed and it will print as is 
+    \ - Escape char
+        e.g., name="diva"
+              $ echo "\${name} value is ${name}" 
+                o/p: ${name} value is diva
+
+Variables:
+    $1 - $9: Input Variables
+    $? : Returns the return code
+            --> 0 - represents successful execution
+            --> non-zero represents failure
+    
+    - Declaration & Initialization happens at a time. There are not different like java/python
+    - Access:
+        * using $, we can access
+        * between ${} and $, always use ${}
+
+
+$() & ``(back ticks) & $(()):
+    $(), ``:
+        - Both does execution of a command
+    $(()):
+        - This will be used for arithmetic operations
+
+Loops:
+    * for 
+    * case
