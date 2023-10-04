@@ -20,6 +20,8 @@ if [ -d "${JENKINS_HOME}" ]; then
         mkdir ${BACKUP_PATH}
         mv ${backup_file_name} ${BACKUP_PATH}/${backup_file_name}
     fi
+    aws s3 cp "${BACKUP_PATH}/${backup_file_name}" "s3://divatrainingtoolsbackup/jenkins-backups/"
+
 else
     echo "---> Jenkins Home Directory does not exist."
     exit 1
