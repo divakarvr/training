@@ -3,6 +3,8 @@
 * Nodes
 * Pipeline
     * Triggers
+* Administration
+    * Directory Structure
 
 
 Installation:
@@ -55,3 +57,16 @@ Pipeline
         ----> Can be overcome with Shell script additions and using jenkins-cli 
         ----> Jenkins script console can also be useful if we know Groovy
 
+
+Administration:
+    * Everything in Jenkins is stored in the form of .xml files
+    * Plugin Installation Insights:
+        - In Jenkins, Plugins will be in the form of .jpi or .hpi stored inside $JENKINS_HOME/plugins directory
+        - When Jenkins comes up, these .hpi/.jpi files will be extracted to the directory with the same name as of Plugin file
+        - When you install a plugin, you will have to restart Jenkins service
+    * Backup:
+        Take JENKINS_HOME directory backup to meet Jenkins backup needs
+    * Customization:
+        * Make changes in the file /usr/lib/systemd/system/jenkins.service (For the path, see the output of 'systemctl status jenkins')
+        * systemctl daemon-reload
+    
