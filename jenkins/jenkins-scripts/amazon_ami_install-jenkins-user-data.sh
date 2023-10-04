@@ -8,3 +8,9 @@ yum install jenkins -y
 systemctl enable jenkins
 systemctl start jenkins
 echo 'tmpfs /tmp tmpfs rw,nodev,nosuid,size=2G 0 0' >> /etc/fstab
+
+
+
+to check user data is executed
+/var/log/cloud-init.log and /var/log/cloud-init-output.log
+
