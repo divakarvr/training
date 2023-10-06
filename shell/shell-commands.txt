@@ -21,6 +21,8 @@ Shell commands:
 * cut 
 * read 
 * file 
+* watch 
+* Miscellaneous
 
 cd:
     * cd <directory-path>
@@ -151,3 +153,13 @@ file:
     file <path of the file>
     --> lets you know what type of file it is
     
+watch:
+    Runs the command specified in regular intervals of the time which the user has provided to do the following
+    * Keep the session alive in the terminal 
+    * Monitor the output of a specific command in regular intervals 
+        syntax: watch -n <time in integer> "<command>"
+                e.g., watch -n3 "ls -l | grep -i blueocean"
+
+            
+* Miscellaneous:
+    yum --showduplicates list <package-name> : gives you all the available versions

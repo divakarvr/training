@@ -2,6 +2,7 @@
 2. EC2
     * ami
     * EBS
+3. IAM
 
 VPC:
     * Why Private networks are needed? 
@@ -91,4 +92,36 @@ EC2:
             * Is nothing but a backup of the Volume
         Lifecycle Manager:
             * Lets you to create schedules to create the snapshots regularly (like cron job)
+
+
+
+IAM:
+    * Policies
+    * Users
+    * User groups
+    * Roles
+
+    Policy: 
+        * What all services you want to access
+        * 2 types of Policies
+            * AWS managed policy
+            * Customer managed policy
+    
+    User:
+        * Needs to be associated with Policies
+        * Levels of access:
+            ~ UI access to aws console
+            ~ Programmatical access to aws 
+            ~ Both UI and Programmatical access to aws
+
+    Group:
+        * Assign policies at the group level
+        * when you add user to the group, the permissions will be inherited to the user
+    
+    Roles:
+        * Policies will be attached to the Roles
+        * In addition, we will specify which service in aws can assume this role.
+            e.g., --> created ec2-s3-role and the necessary policy has been attached to this (necessary policy: s3 full access)
+                  --> Mention the service which can use this role ec2-s3-role (asssume: ec2)
+                  --> Result: ec2 is able to communicate with S3 without you configuring aws cli with keys
 
