@@ -5,6 +5,10 @@
     * Triggers
 * Administration
     * Directory Structure
+* Plugin Installation 
+* User Security
+    * Matrix based authorization strategy
+
 
 
 Installation:
@@ -70,3 +74,20 @@ Administration:
         * Make changes in the file /usr/lib/systemd/system/jenkins.service (For the path, see the output of 'systemctl status jenkins')
         * systemctl daemon-reload
     
+
+Plugin Installation:
+    * 2 ways of doing this Plugin Installation:
+        1. Install Plugin from the UI
+        2. Install plugin in the system directly:
+            ~ Download the plugin into the jenkins-master machine directly
+            ~ Copy the file from Downloaded location to the directory ${JENKINS_HOME}/plugins directory
+            ~ Restart the Jenkins service
+            ~ Plugin will be Installed 
+
+User security:
+    Matrix based authorization strategy:
+    * Operates at the Global level inside the Jenkins
+    * User has to be created first before granting him the permissions
+
+    Project based matrix authorization strategy:
+    * You can grant permissions at the global level and at the Project level as well - MOST ORGS USE THIS
