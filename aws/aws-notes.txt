@@ -94,8 +94,9 @@ EC2:
             * Lets you to create schedules to create the snapshots regularly (like cron job)
 
 
-
 IAM:
+    * Authentication ~ logging in into aws (e.g.,)
+    * Authorization ~ A specific service access can be assigned to you
     * Policies
     * Users
     * User groups
