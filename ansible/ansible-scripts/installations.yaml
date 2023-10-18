@@ -1,0 +1,29 @@
+---
+- hosts: devservers
+  become: yes
+  tasks:
+  - name: Ping the devservers
+    ping: 
+    register: ping_output
+
+  - name: Printing the ping module output
+    debug:
+      msg: "{{ ping_output.ping }}"
+
+  - name: Run the shell script to get the username with which ansible is connecting
+    shell: "whoami"
+    register: whoami_output
+  
+  - name: printing the output of whoami command
+    debug:
+      msg: "{{ whoami_output.stdout }}"
+    
+  - name: Install httpd and java softwares
+    yum:
+      name: ['httpd', 'java']
+      state: absent
+    register: installation_output
+
+  - name: Print the installation_output variable value
+    debug:
+      msg: "{{ installation_output }}"

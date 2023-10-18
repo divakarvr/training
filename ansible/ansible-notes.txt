@@ -1,0 +1,33 @@
+Reference docs:
+* Inbuilt modules:    https://docs.ansible.com/ansible/latest/collections/ansible/builtin/index.html 
+* Building Inventory: https://docs.ansible.com/ansible/latest/inventory_guide/intro_inventory.html
+
+Why Ansible? 
+* To maintain or carry out post provision activities on the server(s)
+    - why userdata is not enough? 
+      * User data is good when provisining the instance. But what about the maintanence after the machine has been provisioned? 
+      * This can be overcome by using Configuration management tools
+
+* what are configuration mgmt tools?
+    ~ They are the ones which can carry out installations, configuration of tools/software inside the server
+
+* what are the popular configuration management tools?
+    ~ Puppet
+    ~ Chef 
+    ~ Ansible
+
+* Why are we going with Ansible? 
+    * Jenkins (not related. just to show you the advantage)
+        Jenkins master 
+            * A process runs all the time (takes up resources in the system)
+            ---> node
+                * java process will keep running iin the node which communicates with the master more often
+      Problem: You have a tool which consumes resources in the system to give you something.
+    * Similar to Jenkins, Puppet and chef are having the master-slave mechanism 
+    * Ansible:
+        - Doesnt have any daemon processes running
+        - works with linux and windows
+        - when working with linux, purely uses ssh communication
+        - when working with windows, purely uses powershell
+
+
