@@ -1,7 +1,13 @@
 ---
-- hosts: devservers
+- hosts: devserver
   become: yes
+  vars:
+    name: diva
   tasks:
+  - name: using variables with {{ name }} as part of training
+    debug:
+      msg: "working with {{ name }} on the ansible"
+
   - name: Ping the devservers
     ping: 
     register: ping_output

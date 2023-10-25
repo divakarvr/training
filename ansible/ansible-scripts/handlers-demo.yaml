@@ -1,0 +1,28 @@
+---
+- hosts: devserver
+  become: yes
+  vars:
+    packages: ['httpd']
+    dude: "diva"
+  tasks:
+  - name: Install the packages {{ packages }} for {{ dude }}
+    yum:
+      name: "{{ packages }}"
+      state: installed
+    
+  - name: Copy the index.html file to the location in remote machine
+    copy:
+      src: files/index.html
+      dest: /var/www/html
+    notify:
+      - Restart service httpd
+      
+  handlers:
+  - name: Restart service httpd
+    systemd:
+      name: httpd
+      state: restarted
+
+
+# Passing variable value from the Command line
+# ansible-playbook handlers-demo.yaml -i inventory -e "dude=praveen"
