@@ -29,5 +29,7 @@ Why Ansible?
         - works with linux and windows
         - when working with linux, purely uses ssh communication
         - when working with windows, purely uses powershell
-
+    * Ansible runs on Python with Linux machines. Coming to windows, its powershell
+        * Chef, Puppet runs overy Ruby
+        * Ansible is faster because its using Python underlying  
 
