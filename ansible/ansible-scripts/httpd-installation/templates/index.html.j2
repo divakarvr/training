@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <h2> Ansible sessions </h2>
+    </head>
+    <body> 
+        <p>
+            Working on handlers in the Playbook 
+            {% if author == "diva" %}
+            Working on handlers in the Playbook 
+            developed and authorised by: {{ author }}
+            We need to complete the training fast
+            {% elif author == "praveen" %}
+            Working on handlers in the Playbook 
+            developed and written by: {{ author }}
+            {% else %}
+                no author dude. 
+            {% endif %}
+        </p>
+    </body>
+</html>
