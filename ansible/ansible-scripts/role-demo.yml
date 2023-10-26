@@ -1,0 +1,24 @@
+---
+- hosts: prodserver
+  become: yes
+  # roles:
+  # - httpd-installation
+  tasks:
+  - name: Invoking the role httpd-installation
+    include_role:
+      name: httpd-installation
+    vars:
+      author: "diva"
+
+
+# before execution
+# Load all the roles and do all the checks inside the code of the Roles
+# import_role should be used
+#   --> loads all the role's content. Takes some time to do the checks before starting execution
+#   --> Once it starts execution, we can be sure that it will run till the end. 
+
+
+# While execution
+# include_role should be used
+#   --> Doesnt do any pre-checks. Directly starts executing
+#   --> If it faces any issue while role execution, stops there itself. not trust worthy

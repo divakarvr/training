@@ -33,3 +33,34 @@ Why Ansible?
         * Chef, Puppet runs overy Ruby
         * Ansible is faster because its using Python underlying  
 
+
+
+
+Generate index.html file. 
+* if person_name variable value is praveen, generate the html with the following content
+    <html>
+        <head>
+            <h2> Ansible sessions </h2>
+        </head>
+        <body> 
+            <p>
+                Working on handlers in the Playbook 
+                developed and written by: praveen
+            </p>
+        </body>
+    </html>
+
+* if person_name variable value is divakar, generate the html with the following content
+
+    <html>
+        <head>
+            <h2> Ansible sessions </h2>
+        </head>
+        <body> 
+            <p>
+                Working on handlers in the Playbook 
+                developed and authorised by: divakar
+                We need to complete the training fast
+            </p>
+        </body>
+    </html>

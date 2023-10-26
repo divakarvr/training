@@ -6,7 +6,15 @@
 [devserver]
 107.20.118.100
 
+[prodserver]
+3.89.83.104
+
 [devserver:vars]
+ansible_ssh_private_key_file="/Users/praveenvaranasi/Downloads/divakar/divakar-training.pem"  
+ansible_ssh_user="ec2-user"  
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+
+[prodserver:vars]
 ansible_ssh_private_key_file="/Users/praveenvaranasi/Downloads/divakar/divakar-training.pem"  
 ansible_ssh_user="ec2-user"  
 ansible_ssh_common_args='-o StrictHostKeyChecking=no'
